@@ -1,0 +1,54 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Status variants */
+.new {
+  color: var(--color-new);
+  background: var(--color-new-bg);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+}
+.new .dot { background: var(--color-new); }
+
+.in_progress {
+  color: var(--color-progress);
+  background: var(--color-progress-bg);
+  border: 1px solid rgba(246, 162, 30, 0.2);
+}
+.in_progress .dot {
+  background: var(--color-progress);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.final {
+  color: var(--color-final);
+  background: var(--color-final-bg);
+  border: 1px solid rgba(63, 185, 80, 0.2);
+}
+.final .dot { background: var(--color-final); }
+
+/* Sizes */
+.sm { font-size: 10px; padding: 2px 8px; }
+.md { font-size: 11px; padding: 3px 10px; }
+.lg { font-size: 12px; padding: 4px 12px; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}

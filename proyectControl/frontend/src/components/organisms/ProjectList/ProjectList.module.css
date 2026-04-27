@@ -1,0 +1,27 @@
+.section { display: flex; flex-direction: column; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-4);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-12) var(--sp-4);
+  gap: var(--sp-3);
+  text-align: center;
+}
+
+.emptyIcon { font-size: 48px; line-height: 1; }
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.hint { font-size: 14px; color: var(--color-text-muted); }

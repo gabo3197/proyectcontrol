@@ -1,0 +1,164 @@
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: visible;
+  animation: fadeIn 200ms ease both;
+  /* Garantiza que el último select no quede cortado */
+  padding-bottom: 0;
+}
+
+.header {
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 1px solid var(--color-border-soft);
+  background: linear-gradient(
+    135deg,
+    var(--color-surface),
+    var(--color-surface-2)
+  );
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskId {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-faint);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+.section {
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 1px solid var(--color-border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* Border se elimina solo cuando NO hay saveBar (sección realmente última) */
+.section:last-child {
+  border-bottom: none;
+}
+
+/* Cuando existe saveBar, la última sección visible igualmente no lleva borde
+   — se resuelve quitando el border-bottom explícitamente en saveBar arriba */
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-faint);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--color-surface-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-soft);
+}
+
+.metaLabel {
+  font-size: 11px;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+}
+
+.assignee {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.assigneeName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.assigneeEmail {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.unassigned {
+  font-size: 14px;
+  color: var(--color-text-faint);
+  font-style: italic;
+}
+
+.assigneeSelect {
+  margin-top: var(--sp-1);
+}
+
+/* Save bar — sticky at bottom */
+.saveBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-6);
+  background: var(--color-surface-2);
+  border-top: 1px solid var(--color-border);
+  animation: fadeIn 160ms ease both;
+}
+
+.pendingMsg {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.savedMsg {
+  font-size: 13px;
+  color: var(--color-final);
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
